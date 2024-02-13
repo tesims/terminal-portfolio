@@ -1,0 +1,84 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: #000; /* Black background */
+    color: #BB11FF; /* Purple text */
+    font-family: 'Courier New', Courier, monospace;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+header {
+    max-width: 90%;
+    margin: 20px 0;
+}
+
+h1, p {
+    margin: 10px auto;
+}
+
+@media (min-width: 768px) {
+    body, html {
+        font-size: 18px; /* Adjust font size for better readability on tablets */
+    }
+
+    header {
+        max-width: 80%;
+    }
+}
+
+@media (min-width: 1024px) {
+    body, html {
+        font-size: 20px; /* Adjust font size for better readability on desktops */
+    }
+
+    header {
+        max-width: 800px; /* Match the max-width of the terminal for consistency */
+    }
+}
+
+#terminal {
+    width: 100%;
+    max-width: 800px; /* Max width for readability */
+    margin: 20px 0;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+.input-line {
+    display: flex;
+    width: 100%;
+    align-items: center; /* Ensures prompt and input are aligned */
+}
+
+.prompt, #input {
+    font-size: 1em; /* Ensures prompt and input text have the same size */
+    line-height: 1.5; /* Adjusts line height for better alignment and readability */
+    font-family: 'Courier New', Courier, monospace; /* Ensures font consistency */
+}
+
+.prompt {
+    white-space: nowrap; /* Prevents the prompt from wrapping */
+    margin-right: 5px; /* Adjust spacing between prompt and input */
+    flex-shrink: 0; /* Prevents the prompt from shrinking */
+}
+
+#input {
+    background-color: #000; /* Black background */
+    border: none;
+    padding: 0 10px; /* Adjust padding to align text vertically */
+    flex-grow: 1; /* Allows input to take up remaining space */
+    color: #BB11FF;
+    outline: none; /* Removes the outline to keep the terminal look */
+}
+
+#output {
+    white-space: pre-wrap;
+    text-align: left; /* Aligns terminal output to the left */
+    width: 100%;
+}
