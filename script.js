@@ -37,7 +37,7 @@ function handleCommand(command) {
             output.innerHTML += `\nDid you know? I once coded an entire website in 24 hours as part of a hackathon challenge!`;
             break;
         case 'read blog':
-            output.innerHTML += `\nCheck out my latest blog posts:\n- How to Learn Programming\n- The Future of Web Development\nVisit my blog for more!`;
+            output.innerHTML += `\nCheck out my latest blog posts:\n- Girl With Too Many Hobbies\n-`;
             break;
         case 'help':
             output.innerHTML += `\nAvailable commands:\n- view resume: Download my resume\n- social: Display social media links\n- show skills: List my skills\n- list projects: View my projects\n- get contact-info: How to contact me\n- tell me a fun fact: Learn something new\n- read blog: My latest blog posts\n- help: Show this help message`;
