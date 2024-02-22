@@ -39,7 +39,7 @@ function handleCommand(command) {
         case 'read blog':
             output.innerHTML += `\nCheck out my latest blog posts:\n- Girl With Too Many Hobbies\n-`;
             window.open('https://blog.annabuildshit.xyz/', '_blank');
-    break;
+            break;
 
         case 'help':
             output.innerHTML += `\nAvailable commands:\n- view resume: Download my resume\n- social: Display social media links\n- show skills: List my skills\n- list projects: View my projects\n- get contact-info: How to contact me\n- tell me a fun fact: Learn something new\n- read blog: My latest blog posts\n- help: Show this help message`;
