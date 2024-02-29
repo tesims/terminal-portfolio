@@ -20,10 +20,12 @@ function handleCommand(command) {
         case 'about':
             output.innerHTML += `[INSERT TEXT HERE]`;
             break;
+
         case 'resume':
             output.innerHTML += `\nOpening resume...`;
             window.open('https://www.tesims.github.io/files/resume.pdf', '_blank');
             break;
+
         case 'projects':
             output.innerHTML += output.innerHTML += `
             <div style="margin-bottom: 5px;"><strong>Check out some of my projects:</strong></div>
@@ -36,6 +38,7 @@ function handleCommand(command) {
             </div>
             `;
             break;
+
         case 'follow-me':
             const socialAccounts = [
                 { name: 'Twitter', icon: '<i class="fab fa-twitter" aria-hidden="true"></i>', username: 'annabuildshit', url: 'https://twitter.com/annabuildshit' },
@@ -51,6 +54,7 @@ function handleCommand(command) {
         
             output.innerHTML += socialOutput;
             break;
+
         case 'contact-me':
             const contactAccounts = [
                 { name: 'Email', icon: '<i class="fas fa-envelope" aria-hidden="true"></i>', username: 'annaloves2build@gmail.com', url: 'mailto:annaloves2build@gmail.com?subject=Portfolio%20Inquiry&body=Hi%20Anna%2C' },
@@ -65,13 +69,64 @@ function handleCommand(command) {
         
             output.innerHTML += contactOutput;
             break;
+
         case 'blog':
             output.innerHTML += `\nGoing to blog...`;
             window.open('https://www.blog.annabuildshit.xyz', '_blank');
             break;
+
         case 'fun-fact':
-            output.innerHTML += `\nCheck out my latest blog posts:\n- Girl With Too Many Hobbies\n-`;
-            window.open('https://blog.annabuildshit.xyz/', '_blank');
+            const funFactsWithImages = [
+                {
+                    fact: `I've always been a bit of a bookworm. Some of my favorite books include:
+                                📚 The Glass Castle
+                                📚 The Subtle Art of Not Giving a F*ck
+                                📚 The Defining Decade
+                                📚 Outliers
+                                📚 The Brain That Changes Itself`,
+                    imageUrl: []
+                },
+                {
+                    fact: "This is my son, Jabir, who tricked me into adopting him. It worked, and now I'm obsessed with him.",
+                    imageUrl: []
+                },
+                {
+                    fact: "I really love to hike and kayak; some of my favorite spots include Redwood National Park and Rocky Mountain National Park.",
+                    imageUrl: [] 
+                },
+                {
+                    fact: "I visited St. Petersburg and Moscow while studying Russian in high school and college.",
+                    imageUrl: [] 
+                },
+                {
+                    fact: "When I was young, I used to love riding my dirt bike and going to motocross races.",
+                    imageUrl: []
+                },
+                {
+                    fact: "My interest in foreign direct investments was sparked after traveling throughout India to study emerging markets as part of my study abroad program.",
+                    imageUrl: []
+                },
+                {
+                    fact: "In third grade, I created a secret toy auction business that was so successful, I almost got expelled.",
+                    imageUrl: []
+                },
+                {
+                    fact: "In my sophomore year of college, I co-founded a non-profit organization aimed at closing the educational gap for underrepresented high school students seeking college admission. We successfully supported over 150 students.",
+                    imageUrl: []
+                },
+            ];
+        
+            const randomIndex = Math.floor(Math.random() * funFactsWithImages.length);
+            const selectedFact = funFactsWithImages[randomIndex];
+
+            let content = `\n${selectedFact.fact}\n`;
+            if (selectedFact.imageUrls.length > 0) {
+                selectedFact.imageUrls.forEach((imageUrl) => {
+                    content += `<img src="${imageUrl}" alt="Fun Fact Image" style="max-width:100%;height:auto;">`;
+                });
+            }
+
+            output.innerHTML += content;
             break;
 
         case 'help':
