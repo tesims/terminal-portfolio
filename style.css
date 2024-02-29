@@ -3,7 +3,7 @@ body, html {
     padding: 0;
     height: 100%;
     background-color: #000; /* Black background */
-    color: #BB11FF; /* Purple text */
+    color: #FFFFFF; /* White text */
     font-family: 'Courier New', Courier, monospace;
     display: flex;
     flex-direction: column;
@@ -16,8 +16,9 @@ header {
     margin: 20px 0;
 }
 
-h1, p {
+h1, h2{
     margin: 10px auto;
+    font-family: 'Futura', Arial, sans-serif;
 }
 
 @media (min-width: 768px) {
@@ -32,7 +33,7 @@ h1, p {
 
 @media (min-width: 1024px) {
     body, html {
-        font-size: 20px; /* Adjust font size for better readability on desktops */
+        font-size: 16px; /* Adjust font size for better readability on desktops */
     }
 
     header {
@@ -73,7 +74,7 @@ h1, p {
     border: none;
     padding: 0 10px; /* Adjust padding to align text vertically */
     flex-grow: 1; /* Allows input to take up remaining space */
-    color: #BB11FF;
+    color: #FFFFFF;
     outline: none; /* Removes the outline to keep the terminal look */
 }
 
@@ -81,4 +82,13 @@ h1, p {
     white-space: pre-wrap;
     text-align: left; /* Aligns terminal output to the left */
     width: 100%;
+}
+a {
+    color: #ffffff; /* Sets hyperlink text to white */
+    text-decoration: none; /* Optional: removes the underline from links */
+}
+
+a:hover {
+    color: #cccccc; /* Lighter shade of grey on hover */
+    text-decoration: underline; /* Optional: adds an underline on hover */
 }
