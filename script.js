@@ -1,29 +1,34 @@
 document.getElementById('input').addEventListener('keydown', function(event) {
     if (event.key === 'Enter') {
-        // Capture the input value and clear it immediately after Enter is pressed
         const inputValue = this.value;
         this.value = '';
-
-        // Append the prompt and the user input to the terminal output
         const newLine = document.createElement('div');
         newLine.textContent = `${document.getElementById('prompt').textContent} ${inputValue}`;
         document.getElementById('output').appendChild(newLine);
-
-        // Handle command (process the input value)
         handleCommand(inputValue);
     }
 });
 
+let currentFunFactIndex = null;
+
 function handleCommand(command) {
     const output = document.getElementById('output');
+
     switch(command.toLowerCase()) {
         case 'about':
-            output.innerHTML += `[INSERT TEXT HERE]`;
+            output.innerHTML += `
+            \nWelcome to my digital space. 
+            My name is Anna, and I passionately explore emerging technologies. With a solid foundation in Data Science Engineering from the University of Michigan, I've navigated roles as diverse as Design Engineer, Trading Analyst, and XR Dev and Lab Manager. My research work spans from analyzing carbon emissions in underdeveloped countries to studying the impact of deep learning in computational finance and exoplanet characterization.
+            \nI'm fascinated by machine learning, neuroscience, and manufacturing and design, and I'm actively exploring innovative ways to integrate these interests into a cohesive career path. Throughout 2023, I travelled across the country every two weeks to participate in hackathons. These hackathons were not just competitions; they were my classroom, keeping me abreast of cutting-edge tools, technologies, and opportunities in tech.
+            \nMy journey as a startup founder began at Founder University, where I launched a fintech company dedicated to reshaping retirement savings for millennials and Gen Z by facilitating direct investment opportunities in emerging markets. It soared with support from LocalHost, who believed in us enough to provide the initial investment for our SEC licensing.
+            \nI've set my sights on upskilling and earning better credentials in 2024, aiming to enhance my credibility and create a solid foundation for turning ambitious plans into successful outcomes. Whether you're a fellow tech enthusiast, potential collaborator, or just passing through, I'm glad you're here. Let's connect and explore how we can make a difference, together.
+
+            `;
             break;
 
         case 'resume':
             output.innerHTML += `\nOpening resume...`;
-            window.open('https://www.tesims.github.io/files/resume.pdf', '_blank');
+            window.open('./files/resume.pdf', '_blank');
             break;
 
         case 'projects':
@@ -31,10 +36,10 @@ function handleCommand(command) {
             <div style="margin-bottom: 5px;"><strong>Check out some of my projects:</strong></div>
             
             <div style="margin-bottom: 10px;">
-                <h2 style="margin: 5px 0;"><strong>Weather App</strong></h2>
-                <p style="margin: 2px 0;">A web application that provides real-time weather information based on user location. Utilizes the OpenWeatherMap API for data.</p>
-                <p style="margin: 2px 0;">Languages & Frameworks: JavaScript, React</p>
-                <p style="margin: 2px 0;"><a href="link_to_live_demo" target="_blank">Live Demo</a> | <a href="https://github.com/tesims" target="_blank">Repository</a></p>
+                <h2 style="margin: 5px 0;"><strong>Terminal Themed Portfolio Website</strong></h2>
+                <p style="margin: 2px 0;">This portfolio website, designed with a unique terminal theme, showcases my projects and skills through an interactive command-line interface, offering users a distinctive and engaging browsing experience.</p>
+                <p style="margin: 2px 0;">Languages, Tools, & Frameworks: HTML, CSS, JavaScript, AWS</p>
+                <p style="margin: 2px 0;"><a href="https://annabuildshit.xyz/" target="_blank">Live Demo</a> | <a href="https://github.com/tesims/tesims.github.io" target="_blank">Repository</a></p>
             </div>
             `;
             break;
@@ -78,25 +83,21 @@ function handleCommand(command) {
         case 'fun-fact':
             const funFactsWithImages = [
                 {
-                    fact: `I've always been a bit of a bookworm. Some of my favorite books include:
-                                📚 The Glass Castle
-                                📚 The Subtle Art of Not Giving a F*ck
-                                📚 The Defining Decade
-                                📚 Outliers
-                                📚 The Brain That Changes Itself`,
+                    fact: `I've always been a bit of a bookworm. Some of my favorite books include:\n📚 The Glass Castle \n📚 The Subtle Art of Not Giving a F*ck\n📚 The Defining Decade\n📚 Outliers\n📚 The Brain That Changes Itself`,
                     imageUrl: []
                 },
                 {
                     fact: "This is my son, Jabir, who tricked me into adopting him. It worked, and now I'm obsessed with him.",
-                    imageUrl: []
+                    imageUrl: ["./files/images/IMG_9146.jpg", "./files/images/IMG_9147.jpg"]
+
                 },
                 {
                     fact: "I really love to hike and kayak; some of my favorite spots include Redwood National Park and Rocky Mountain National Park.",
-                    imageUrl: [] 
+                    imageUrl: ["./files/images/IMG_9140.jpg"] 
                 },
                 {
                     fact: "I visited St. Petersburg and Moscow while studying Russian in high school and college.",
-                    imageUrl: [] 
+                    imageUrl: ["./files/images/IMG_9145.jpg"] 
                 },
                 {
                     fact: "When I was young, I used to love riding my dirt bike and going to motocross races.",
@@ -104,7 +105,7 @@ function handleCommand(command) {
                 },
                 {
                     fact: "My interest in foreign direct investments was sparked after traveling throughout India to study emerging markets as part of my study abroad program.",
-                    imageUrl: []
+                    imageUrl: ["./files/images/IMG_9141.jpg"]
                 },
                 {
                     fact: "In third grade, I created a secret toy auction business that was so successful, I almost got expelled.",
@@ -112,20 +113,25 @@ function handleCommand(command) {
                 },
                 {
                     fact: "In my sophomore year of college, I co-founded a non-profit organization aimed at closing the educational gap for underrepresented high school students seeking college admission. We successfully supported over 150 students.",
-                    imageUrl: []
+                    imageUrl: ["./files/images/IMG_9143.jpg","./files/images/IMG_9142.jpg"]
                 },
             ];
-        
-            const randomIndex = Math.floor(Math.random() * funFactsWithImages.length);
-            const selectedFact = funFactsWithImages[randomIndex];
-
-            let content = `\n${selectedFact.fact}\n`;
-            if (selectedFact.imageUrls.length > 0) {
-                selectedFact.imageUrls.forEach((imageUrl) => {
-                    content += `<img src="${imageUrl}" alt="Fun Fact Image" style="max-width:100%;height:auto;">`;
-                });
+             
+            // If it's the first time, select a random fun fact
+            if (currentFunFactIndex === null) {
+                currentFunFactIndex = Math.floor(Math.random() * funFactsWithImages.length);
+            } else {
+                // Sequentially move through the list for subsequent calls
+                currentFunFactIndex = (currentFunFactIndex + 1) % funFactsWithImages.length;
             }
 
+            const selectedFact = funFactsWithImages[currentFunFactIndex];
+            let content = `<p>${selectedFact.fact}</p>`;
+            if (selectedFact.imageUrl.length > 0) {
+                selectedFact.imageUrl.forEach((imageUrl) => {
+                    content += `<img src="${imageUrl}" alt="Fun Fact Image" style="width:150px; height:auto; margin: 5px;">`;
+                });
+            }
             output.innerHTML += content;
             break;
 
@@ -139,10 +145,21 @@ function handleCommand(command) {
             \n'contact-me'  : Thoughts, questions, opportunities? Reach out.
             \n'blog'        : Enter my thought lab.
             \n'fun-fact'    : Tidbits about me outside of coding.
+            \n'reset'       : Empty your previous commands. 
             \n`;
             break;
+
+        case 'reset':
+            // Refreshes the current page
+            window.location.reload();
+            break;
+    
         default:
             output.innerHTML += `\nUnknown command: ${command}. Type 'help' to see available commands.`;
     }
-    output.innerHTML += '\n'; // Add a new line for the next command
+    output.innerHTML += '\n';
 }
+
+
+
+

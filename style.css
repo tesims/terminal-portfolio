@@ -92,3 +92,50 @@ a:hover {
     color: #cccccc; /* Lighter shade of grey on hover */
     text-decoration: underline; /* Optional: adds an underline on hover */
 }
+
+/* Slider Container */
+.image-slider {
+    width: 300px; /* Adjust based on your preference */
+    height: 200px; /* Adjust based on your preference */
+    overflow: hidden;
+    position: relative;
+    margin: 20px auto; /* Center the slider */
+    background-color: #222; /* Slightly lighter than the body for contrast */
+    border: 1px solid #444; /* Subtle border */
+}
+
+/* Slider Images */
+.image-slider img {
+    display: block;
+    max-width: 100%; /* Ensure images are responsive */
+    height: auto; /* Maintain aspect ratio */
+}
+
+/* Slider Navigation Buttons */
+.image-slider .prev, .image-slider .next {
+    cursor: pointer;
+    background-color: rgba(255,255,255,0.1); /* Subtle white for visibility */
+    color: white;
+    border: none;
+    padding: 10px;
+    font-family: 'Courier New', Courier, monospace; /* Consistent with the body */
+    font-size: 16px; /* Match the font size for desktops */
+}
+
+.image-slider .prev:hover, .image-slider .next:hover {
+    background-color: rgba(255,255,255,0.2); /* Slightly more visible on hover */
+}
+
+.image-slider .prev {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+}
+
+.image-slider .next {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+}
