@@ -144,11 +144,11 @@ function handleCommand(command) {
             \n'contact-me'  : Thoughts, questions, opportunities? Reach out.
             \n'blog'        : Enter my thought lab.
             \n'fun-fact'    : Tidbits about me outside of coding.
-            \n'reset'       : Empty your previous commands. 
+            \n'clear'       : Clear the current screen.
             \n`;
             break;
 
-        case 'reset':
+        case 'clear':
             // Refreshes the current page
             window.location.reload();
             break;
