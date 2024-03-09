@@ -1,6 +1,10 @@
 # Terminal-Themed Personal Portfolio Website
 
 Welcome to the repository of my Terminal-Themed Personal Portfolio Website! Designed to uniquely showcase my professional journey, skills, and projects, this website adopts a classic terminal interface, offering an engaging and interactive experience for visitors, including prospective job recruiters.
+#
+
+![Snapshot of Terminal-Themed Portfolio Website](./files/images/demo-snapshot.png)
+
 
 ## Project Overview
 
