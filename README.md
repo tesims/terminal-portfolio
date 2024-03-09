@@ -25,5 +25,5 @@ This portfolio stands out by mimicking the interaction style of a computer termi
 
 ## Live Demo
 
-You can view the live website by visiting [Terminal-Themed Portfolio](www.sycorpia.xyz).
+You can view the live website by visiting [Terminal-Themed Portfolio](https://sycorpia.xyz).
 
