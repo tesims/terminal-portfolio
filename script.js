@@ -33,6 +33,27 @@ function handleCommand(command) {
         case 'projects':
             output.innerHTML += output.innerHTML += `
             <div style="margin-bottom: 5px;"><strong>Check out some of my projects:</strong></div>
+
+            <div style="margin-bottom: 10px;">
+                <h2 style="margin: 5px 0;"><strong>Data Mask</strong></h2>
+                <p style="margin: 2px 0;">PII Data Masking is a privacy-preserving solution that utilizes locally (cloud) hosted language models to identify and replace sensitive personal information within datasets. By assessing the context and importance of the redacted data, the system generates non-identifiable alternatives that maintain the semantic integrity and analytical value of the original text. This innovative approach ensures data privacy while preserving the usefulness of the dataset for analysis and insights.</p>
+                <p style="margin: 2px 0;">Languages, Tools, & Frameworks: Django, Gemini, Mistral 7b, Presidio, Langchain, VertexAI</p>
+                <p style="margin: 2px 0;"><a href="https://devpost.com/software/datamask" target="_blank">Live Demo</a> | <a href="https://github.com/chriskok/DataMask" target="_blank">Repository</a></p>
+            </div>
+
+            <div style="margin-bottom: 10px;">
+                <h2 style="margin: 5px 0;"><strong>Nevalone</strong></h2>
+                <p style="margin: 2px 0;">created lifelike clones of loved ones, enabling seniors and dementia patients to engage in conversations and relive cherished memories, providing a lifeline to emotional well-being and continuous connection.</p>
+                <p style="margin: 2px 0;">Languages, Tools, & Frameworks: Next.js, OpenAI API, ElevenLabs, Twilio</p>
+                <p style="margin: 2px 0;"><a href="https://devpost.com/software/navalone" target="_blank">Live Demo</a> | <a href="https://github.com/tesims/Hack-Harvard" target="_blank">Repository</a></p>
+            </div>
+
+            <div style="margin-bottom: 10px;">
+                <h2 style="margin: 5px 0;"><strong>PaperPing/strong></h2>
+                <p style="margin: 2px 0;">PaperPing is a digital platform designed for both commercial and academic researchers to streamline their research endeavors. By continuously monitoring the web for the freshest research articles tailored to a user's specific interests, PaperPing ensures users are instantly notified upon the release of relevant content. </p>
+                <p style="margin: 2px 0;">Languages, Tools, & Frameworks: HTML, CSS, JavaScript, AWS</p>
+                <p style="margin: 2px 0;"><a href="https://devpost.com/software/paperping" target="_blank">Live Demo</a> | <a href="https://github.com/duong-vo/penn-apps" target="_blank">Repository</a></p>
+            </div>
             
             <div style="margin-bottom: 10px;">
                 <h2 style="margin: 5px 0;"><strong>Terminal Themed Portfolio Website</strong></h2>
@@ -45,7 +66,7 @@ function handleCommand(command) {
 
         case 'follow-me':
             const socialAccounts = [
-                { name: 'Twitter', icon: '<i class="fab fa-twitter" aria-hidden="true"></i>', username: 'annabuildshit', url: 'https://twitter.com/annabuildshit' },
+                { name: 'Twitter', icon: '<i class="fab fa-twitter" aria-hidden="true"></i>', username: 'annabuildshit', url: 'https://twitter.com/sycorpia' },
                 { name: 'Instagram', icon: '<i class="fab fa-instagram" aria-hidden="true"></i>', username: 'annabuildshit', url: 'https://instagram.com/annabuildshit' },
                 { name: 'GitHub', icon: '<i class="fab fa-github" aria-hidden="true"></i>', username: 'tesims', url: 'https://github.com/tesims' }
             ];
@@ -61,7 +82,7 @@ function handleCommand(command) {
 
         case 'contact-me':
             const contactAccounts = [
-                { name: 'Email', icon: '<i class="fas fa-envelope" aria-hidden="true"></i>', username: 'annaloves2build@gmail.com', url: 'mailto:annaloves2build@gmail.com?subject=Portfolio%20Inquiry&body=Hi%20Anna%2C' },
+                { name: 'Email', icon: '<i class="fas fa-envelope" aria-hidden="true"></i>', username: 'sycorpia@gmail.com', url: 'mailto:sycorpia@gmail.com?subject=Portfolio%20Inquiry&body=Hi%20Anna%2C' },
                 { name: 'LinkedIn', icon: '<i class="fab fa-linkedin" aria-hidden="true"></i>', username: 'anna-sims-b73233257', url: 'https://www.linkedin.com/in/anna-sims-b73233257/' }
             ];
         
@@ -76,7 +97,7 @@ function handleCommand(command) {
 
         case 'blog':
             output.innerHTML += `\nGoing to blog...`;
-            window.open('https://www.blog.annabuildshit.xyz', '_blank');
+            window.open('https://blog.sycorpia.xyz/', '_blank');
             break;
 
         case 'fun-fact':
