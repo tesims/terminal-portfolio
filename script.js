@@ -17,11 +17,10 @@ function handleCommand(command) {
     switch(command.toLowerCase()) {
         case 'about':
             output.innerHTML += `
-            \nWelcome to my digital space. My name is Anna, and I passionately explore emerging technologies. With a solid foundation in Data Science Engineering from the University of Michigan, I've navigated roles as diverse as Design Engineer, Trading Analyst, and XR Dev and Lab Manager. My research work spans from analyzing carbon emissions in underdeveloped countries to studying the impact of deep learning in computational finance and exoplanet characterization.
-            \nI'm fascinated by machine learning, neuroscience, and manufacturing and design, and I'm actively exploring innovative ways to integrate these interests into a cohesive career path. Throughout 2023, I travelled across the country every two weeks to participate in hackathons. These hackathons were not just competitions; they were my classroom, keeping me abreast of cutting-edge tools, technologies, and opportunities in tech.
+            \nWelcome to my digital space. My name is Anna, and I passionately explore emerging technologies. With a solid foundation in Data Science Engineering from the University of Michigan, I've navigated roles as diverse as Design Engineer, Trading Analyst, and XR Dev and Lab Manager. My research work spans from analyzing carbon emissions in underdeveloped countries to studying the impact of deep learning in computational finance and exoplanet characterization. 
+            \nThroughout 2023, I travelled across the country every two weeks to participate in hackathons. These hackathons were not just competitions; they were my classroom, keeping me abreast of cutting-edge tools, technologies, and opportunities in tech.
             \nMy journey as a startup founder began at Founder University, where I launched a fintech company dedicated to reshaping retirement savings for millennials and Gen Z by facilitating direct investment opportunities in emerging markets. It soared with support from LocalHost, who believed in us enough to provide the initial investment for our SEC licensing.
             \nI've set my sights on upskilling and earning better credentials in 2024, aiming to enhance my credibility and create a solid foundation for turning ambitious plans into successful outcomes. Whether you're a fellow tech enthusiast, potential collaborator, or just passing through, I'm glad you're here. Let's connect and explore how we can make a difference, together.
-
             `;
             break;
 
@@ -30,9 +29,29 @@ function handleCommand(command) {
             window.open('./files/resume.pdf', '_blank');
             break;
 
-        case 'projects':
+        case 'current projects':
+            output.innerHTML += `
+            <div style="margin-bottom: 10px;">
+                <h2 style="margin: 5px 0;"><strong>Graxl</strong></h2>
+                <p style="margin: 2px 0;">Context preserving multimodal data mask I am building as part of the Bytedance Innovator Program</p>
+            </div>
+
+            <div style="margin-bottom: 10px;">
+                <h2 style="margin: 5px 0;"><strong>Acquiring 101 Hobbies and Skills</strong></h2>
+                <p style="margin: 2px 0;">I'll be sharing my journey of learning 101 hobbies in only 12 months to test if variety beats specialization. This challenge was launched as part of season 5 of buildspace's nights and weekends.</p>
+            </div>
+
+            <div style="margin-bottom: 10px;">
+                <h2 style="margin: 5px 0;"><strong>Yoqued</strong></h2>
+                <p style="margin: 2px 0;">Yoqued is 6 month long social experiment I designed to test whether for-profit dating apps are flawed by design or intention.</p>
+            </div>
+            
+            `;
+            break;
+
+        case 'previous projects':
             output.innerHTML += output.innerHTML += `
-            <div style="margin-bottom: 5px;"><strong>Check out some of my projects:</strong></div>
+            <div style="margin-bottom: 5px;"><strong>Check out some of my old projects:</strong></div>
 
             <div style="margin-bottom: 10px;">
                 <h2 style="margin: 5px 0;"><strong>Data Mask</strong></h2>
@@ -49,7 +68,7 @@ function handleCommand(command) {
             </div>
 
             <div style="margin-bottom: 10px;">
-                <h2 style="margin: 5px 0;"><strong>PaperPing/strong></h2>
+                <h2 style="margin: 5px 0;"><strong>PaperPing</strong></h2>
                 <p style="margin: 2px 0;">PaperPing is a digital platform designed for both commercial and academic researchers to streamline their research endeavors. By continuously monitoring the web for the freshest research articles tailored to a user's specific interests, PaperPing ensures users are instantly notified upon the release of relevant content. </p>
                 <p style="margin: 2px 0;">Languages, Tools, & Frameworks: HTML, CSS, JavaScript, AWS</p>
                 <p style="margin: 2px 0;"><a href="https://devpost.com/software/paperping" target="_blank">Live Demo</a> | <a href="https://github.com/duong-vo/penn-apps" target="_blank">Repository</a></p>
@@ -158,14 +177,15 @@ function handleCommand(command) {
         case 'help':
             output.innerHTML += 
             `\nAvailable commands:
-            \n'about'       : Get to know me a little better.
-            \n'resume'      : Grab my resume.
-            \n'projects'    : Check out some of things I've built!
-            \n'follow-me'   : Let's connect! Find my socials.
-            \n'contact-me'  : Thoughts, questions, opportunities? Reach out.
-            \n'blog'        : Enter my thought lab.
-            \n'fun-fact'    : Tidbits about me outside of coding.
-            \n'clear'       : Clear the current screen.
+            \n'about'               : Get to know me a little better.
+            \n'resume'              : Grab my resume.
+            \n'current projects'    : Check out the things I'm working on right now!
+            \n'previous projects'   : See some of things I've built in the past!
+            \n'follow-me'           : Let's connect! Find my socials.
+            \n'contact-me'          : Thoughts, questions, opportunities? Reach out.
+            \n'blog'                : Enter my thought lab.
+            \n'fun-fact'            : Tidbits about me outside of coding.
+            \n'clear'               : Clear the current screen.
             \n`;
             break;
 
