@@ -1,3 +1,12 @@
+document.addEventListener('DOMContentLoaded', function() {
+    // Automatically display the help command on load
+    const initialCommand = 'help';
+    const newLine = document.createElement('div');
+    newLine.textContent = `${document.getElementById('prompt').textContent} ${initialCommand}`;
+    document.getElementById('output').appendChild(newLine);
+    handleCommand(initialCommand);
+});
+
 document.getElementById('input').addEventListener('keydown', function(event) {
     if (event.key === 'Enter') {
         const inputValue = this.value;
@@ -17,7 +26,7 @@ function handleCommand(command) {
     switch(command.toLowerCase()) {
         case 'about':
             output.innerHTML += `
-            \nWelcome to my digital space. My name is Anna, and I passionately explore emerging technologies. With a solid foundation in Data Science Engineering from the University of Michigan, I've navigated roles as diverse as Design Engineer, Trading Analyst, and XR Dev and Lab Manager. My research work spans from analyzing carbon emissions in underdeveloped countries to studying the impact of deep learning in computational finance and exoplanet characterization. 
+            \nWelcome, my name is Anna! When it comes to my day job I love all things data, but at night and on the weekends I enjoy exploring the more creative side of technology. I have a solid foundation in Data Science and Engineering from the University of Michigan, I've navigated roles as diverse as Design Engineer, Trading Analyst, and XR Dev and Lab Manager. My research work spans from analyzing carbon emissions in underdeveloped countries to studying the impact of deep learning in computational finance and exoplanet characterization. 
             \nThroughout 2023, I travelled across the country every two weeks to participate in hackathons. These hackathons were not just competitions; they were my classroom, keeping me abreast of cutting-edge tools, technologies, and opportunities in tech.
             \nMy journey as a startup founder began at Founder University, where I launched a fintech company dedicated to reshaping retirement savings for millennials and Gen Z by facilitating direct investment opportunities in emerging markets. It soared with support from LocalHost, who believed in us enough to provide the initial investment for our SEC licensing.
             \nI've set my sights on upskilling and earning better credentials in 2024, aiming to enhance my credibility and create a solid foundation for turning ambitious plans into successful outcomes. Whether you're a fellow tech enthusiast, potential collaborator, or just passing through, I'm glad you're here. Let's connect and explore how we can make a difference, together.
@@ -26,68 +35,86 @@ function handleCommand(command) {
 
         case 'resume':
             output.innerHTML += `\nOpening resume...`;
-            window.open('./files/resume.pdf', '_blank');
+            window.open('./files/images/resume.pdf', '_blank');
             break;
 
         case 'current projects':
             output.innerHTML += `
+
             <div style="margin-bottom: 10px;">
-                <h2 style="margin: 5px 0;"><strong>Graxl</strong></h2>
-                <p style="margin: 2px 0;">Context preserving multimodal data mask I am building as part of the Bytedance Innovator Program</p>
+                <h2 style="margin: 5px 0;"><strong>Learning 101 Hobbies</strong></h2>
+                <p style="margin: 2px 0;">I'll be sharing my journey of learning 101 hobbies in only 12 months to test if variety beats specialization. I initially launched this challenge as part of Season 5 of Buildspace's Nights and Weekends program. I regularly upload short vlogs to Instagram and TikTok to share progress and updates as I work through the 101 hobbies.</p>
+                <p style="margin: 2px 0;">Hobbies & Skills: Paragliding, Stonecarving, Competitive Programming, Trap & Skeet Shooting, and 97 others</p>
+                <p style="margin: 2px 0;"><a href="https://instagram.com/sycorpia">Instagram Vlogs</a> | <a href="https://tiktok.com/sycorpia" target="_blank">TikTok Vlogs</a></p>
             </div>
 
             <div style="margin-bottom: 10px;">
-                <h2 style="margin: 5px 0;"><strong>Acquiring 101 Hobbies and Skills</strong></h2>
-                <p style="margin: 2px 0;">I'll be sharing my journey of learning 101 hobbies in only 12 months to test if variety beats specialization. This challenge was launched as part of season 5 of buildspace's nights and weekends.</p>
+                <h2 style="margin: 5px 0;"><strong>Drolg</strong></h2>
+                <p style="margin: 2px 0;">Drolg is an AI party DJ that curates the perfect playlist by analyzing the mood and atmosphere of parties via computer vision. It selects the best songs to create and maintain the ideal atmosphere desired by the host.</p>
+                <p style="margin: 2px 0;">Technologies & Skills: Recommendation Systems, Computer Vision, API Integration, DevOps, Data Processing, Real-Time Systems</p>
+                <p style="margin: 2px 0;"><a href="https://drolg.com">Live Demo</a> | <a href="https://github.com/tesims/drolg" target="_blank">Repository</a></p>
             </div>
+
+            <div style="margin-bottom: 10px;">
+                <h2 style="margin: 5px 0;"><strong>Gralx</strong></h2>
+                <p style="margin: 2px 0;">Gralx is a context-preserving multimodal data mask API, a privacy layer I'm developing for the ByteDance Innovator Program. It's designed to help researchers and companies working with Large Language Models (LLMs) maintain compliance with privacy standards.</p>
+                <p style="margin: 2px 0;">Technologies & Skills: LLMs, API Integration, Multimedia Processing, Open Source</p>
+                <p style="margin: 2px 0;"><a href="https://gralx.com">Live Demo</a> | <a href="https://github.com/tesims/gralx" target="_blank">Repository</a></p>
+            </div>
+
 
             <div style="margin-bottom: 10px;">
                 <h2 style="margin: 5px 0;"><strong>Yoqued</strong></h2>
-                <p style="margin: 2px 0;">Yoqued is 6 month long social experiment I designed to test whether for-profit dating apps are flawed by design or intention.</p>
+                <p style="margin: 2px 0;">Yoqued is a 6-month-long social experiment I designed to test whether for-profit dating apps are flawed by design or intention. This is my first creative technology project, loosely inspired by my favorite creative technologist, Lauren Lee McCarthy. The dating app is replaced with SMS text instead of swipes, auto-generated "date me" docs instead of image-based profiles, compatibility matching based on an extensive unorthodox psychology-based compatibility quiz instead of preferences, and a maximum of three matches a month with mandatory meetings.</p>
+                <p style="margin: 2px 0;">Technologies & Skills: Full-stack Web Development, Recommendation Systems, API Integration, Data Warehousing & Databases</p>
+                <p style="margin: 2px 0;"><a href="https://yoqued.com">Try It Now</a> | <a href="https://github.com/tesims/yoqued" target="_blank">Repository</a></p>
             </div>
-            
+        </div>
             `;
             break;
 
         case 'previous projects':
-            output.innerHTML += output.innerHTML += `
+            output.innerHTML += `
             <div style="margin-bottom: 5px;"><strong>Check out some of my old projects:</strong></div>
 
             <div style="margin-bottom: 10px;">
                 <h2 style="margin: 5px 0;"><strong>Data Mask</strong></h2>
                 <p style="margin: 2px 0;">PII Data Masking is a privacy-preserving solution that utilizes locally (cloud) hosted language models to identify and replace sensitive personal information within datasets. By assessing the context and importance of the redacted data, the system generates non-identifiable alternatives that maintain the semantic integrity and analytical value of the original text. This innovative approach ensures data privacy while preserving the usefulness of the dataset for analysis and insights.</p>
                 <p style="margin: 2px 0;">Languages, Tools, & Frameworks: Django, Gemini, Mistral 7b, Presidio, Langchain, VertexAI</p>
-                <p style="margin: 2px 0;"><a href="https://devpost.com/software/datamask" target="_blank">Live Demo</a> | <a href="https://github.com/chriskok/DataMask" target="_blank">Repository</a></p>
+                <p style="margin: 2px 0;"><a href="https://devpost.com/software/datamask" target="_blank">Live Demo</a> | <a href="https://github.com/chriskok/DataMask" target="_blank">DevPost</a></p>
             </div>
 
             <div style="margin-bottom: 10px;">
                 <h2 style="margin: 5px 0;"><strong>Nevalone</strong></h2>
-                <p style="margin: 2px 0;">created lifelike clones of loved ones, enabling seniors and dementia patients to engage in conversations and relive cherished memories, providing a lifeline to emotional well-being and continuous connection.</p>
+                <p style="margin: 2px 0;">Created lifelike clones of loved ones, enabling seniors and dementia patients to engage in conversations and relive cherished memories, providing a lifeline to emotional well-being and continuous connection.</p>
                 <p style="margin: 2px 0;">Languages, Tools, & Frameworks: Next.js, OpenAI API, ElevenLabs, Twilio</p>
-                <p style="margin: 2px 0;"><a href="https://devpost.com/software/navalone" target="_blank">Live Demo</a> | <a href="https://github.com/tesims/Hack-Harvard" target="_blank">Repository</a></p>
+                <p style="margin: 2px 0;"><a href="https://devpost.com/software/navalone" target="_blank">Live Demo</a> | <a href="https://github.com/tesims/Hack-Harvard" target="_blank">DevPost</a></p>
             </div>
 
             <div style="margin-bottom: 10px;">
                 <h2 style="margin: 5px 0;"><strong>PaperPing</strong></h2>
                 <p style="margin: 2px 0;">PaperPing is a digital platform designed for both commercial and academic researchers to streamline their research endeavors. By continuously monitoring the web for the freshest research articles tailored to a user's specific interests, PaperPing ensures users are instantly notified upon the release of relevant content. </p>
                 <p style="margin: 2px 0;">Languages, Tools, & Frameworks: HTML, CSS, JavaScript, AWS</p>
-                <p style="margin: 2px 0;"><a href="https://devpost.com/software/paperping" target="_blank">Live Demo</a> | <a href="https://github.com/duong-vo/penn-apps" target="_blank">Repository</a></p>
+                <p style="margin: 2px 0;"><a href="https://devpost.com/software/paperping" target="_blank">Live Demo</a> | <a href="https://github.com/duong-vo/penn-apps" target="_blank">DevPost</a></p>
             </div>
             
-            <div style="margin-bottom: 10px;">
-                <h2 style="margin: 5px 0;"><strong>Terminal Themed Portfolio Website</strong></h2>
-                <p style="margin: 2px 0;">This portfolio website, designed with a unique terminal theme, showcases my projects and skills through an interactive command-line interface, offering users a distinctive and engaging browsing experience.</p>
-                <p style="margin: 2px 0;">Languages, Tools, & Frameworks: HTML, CSS, JavaScript, AWS</p>
-                <p style="margin: 2px 0;"><a href="https://annabuildshit.xyz/" target="_blank">Live Demo</a> | <a href="https://github.com/tesims/tesims.github.io" target="_blank">Repository</a></p>
-            </div>
             `;
             break;
 
-        case 'follow-me':
+        case 'follow me':
             const socialAccounts = [
-                { name: 'Twitter', icon: '<i class="fab fa-twitter" aria-hidden="true"></i>', username: 'annabuildshit', url: 'https://twitter.com/sycorpia' },
-                { name: 'Instagram', icon: '<i class="fab fa-instagram" aria-hidden="true"></i>', username: 'annabuildshit', url: 'https://instagram.com/annabuildshit' },
-                { name: 'GitHub', icon: '<i class="fab fa-github" aria-hidden="true"></i>', username: 'tesims', url: 'https://github.com/tesims' }
+                { name: 'Twitter', icon: '<i class="fab fa-twitter" aria-hidden="true"></i>', username: 'sycorpia', url: 'https://twitter.com/sycorpia' },
+
+                { name: 'Instagram ', icon: '<i class="fab fa-instagram" aria-hidden="true"></i>', username: 'sycorpia', url: 'https://instagram.com/sycorpia' },
+
+                { name: 'Instagram (personal)', icon: '<i class="fab fa-instagram" aria-hidden="true"></i>', username: 'annabuildshit', url: 'https://instagram.com/annabuildshit' },
+                
+
+                { name: 'LinkedIn', icon: '<i class="fab fa-linkedin" aria-hidden="true"></i>', username: 'anna-sims-b73233257', url: 'https://www.linkedin.com/in/anna-sims-b73233257/' },
+
+                { name: 'GitHub', icon: '<i class="fab fa-github" aria-hidden="true"></i>', username: 'tesims', url: 'https://github.com/tesims' },
+
+                
             ];
         
             let socialOutput = "<p>Social Media Accounts:</p>";
@@ -99,13 +126,13 @@ function handleCommand(command) {
             output.innerHTML += socialOutput;
             break;
 
-        case 'contact-me':
+        case 'contact me':
             const contactAccounts = [
                 { name: 'Email', icon: '<i class="fas fa-envelope" aria-hidden="true"></i>', username: 'sycorpia@gmail.com', url: 'mailto:sycorpia@gmail.com?subject=Portfolio%20Inquiry&body=Hi%20Anna%2C' },
-                { name: 'LinkedIn', icon: '<i class="fab fa-linkedin" aria-hidden="true"></i>', username: 'anna-sims-b73233257', url: 'https://www.linkedin.com/in/anna-sims-b73233257/' }
+
             ];
         
-            let contactOutput = "<p>Social Media Accounts:</p>";
+            let contactOutput = "<p>Contact Me:</p>";
         
             contactAccounts.forEach(account => {
                 contactOutput += `${account.icon} ${account.name}: <a href="${account.url}" target="_blank">@${account.username}</a><br>`;
@@ -116,7 +143,7 @@ function handleCommand(command) {
 
         case 'blog':
             output.innerHTML += `\nGoing to blog...`;
-            window.open('https://blog.sycorpia.xyz/', '_blank');
+            window.open('blog.html', '_blank'); 
             break;
 
         case 'fun-fact':
@@ -177,15 +204,15 @@ function handleCommand(command) {
         case 'help':
             output.innerHTML += 
             `\nAvailable commands:
-            \n'about'               : Get to know me a little better.
-            \n'resume'              : Grab my resume.
-            \n'current projects'    : Check out the things I'm working on right now!
-            \n'previous projects'   : See some of things I've built in the past!
-            \n'follow-me'           : Let's connect! Find my socials.
-            \n'contact-me'          : Thoughts, questions, opportunities? Reach out.
-            \n'blog'                : Enter my thought lab.
-            \n'fun-fact'            : Tidbits about me outside of coding.
-            \n'clear'               : Clear the current screen.
+            \n'about'               : Get to know me a little better
+            \n'resume'              : Grab my resume
+            \n'current projects'    : Check out the things I'm working on right now
+            \n'previous projects'   : See some of the things I've built in the past
+            \n'follow me'           : Let's connect! Find my socials
+            \n'contact me'          : Thoughts, questions, opportunities? Reach out.
+            \n'blog'                : See my latest reflections, thoughts, and updates
+            \n'fun fact'            : Tidbits about me outside of coding
+            \n'clear'               : Clear the current screen
             \n`;
             break;
 
@@ -199,7 +226,3 @@ function handleCommand(command) {
     }
     output.innerHTML += '\n';
 }
-
-
-
-

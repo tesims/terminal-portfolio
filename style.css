@@ -2,8 +2,8 @@ body, html {
     margin: 0;
     padding: 0;
     height: 100%;
-    background-color: #000; /* Black background */
-    color: #FFFFFF; /* White text */
+    background-color: #f6e7cc; /* Cream background */
+    color: #4a334d; /* Dark purple text */
     font-family: 'Courier New', Courier, monospace;
     display: flex;
     flex-direction: column;
@@ -14,11 +14,23 @@ body, html {
 header {
     max-width: 90%;
     margin: 20px 0;
+    text-align: center;
 }
 
-h1, h2{
+header h1, header h2 {
     margin: 10px auto;
-    font-family: 'Futura', Arial, sans-serif;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+header nav a {
+    color: #4a334d; /* Dark purple text for hyperlinks */
+    margin: 0 0.5rem;
+    text-decoration: none; /* Removes the underline from links */
+}
+
+header nav a:hover {
+    color: #6d5076; /* Lighter shade of purple on hover */
+    text-decoration: underline; /* Adds an underline on hover */
 }
 
 @media (min-width: 768px) {
@@ -70,11 +82,11 @@ h1, h2{
 }
 
 #input {
-    background-color: #000; /* Black background */
+    background-color: #f6e7cc; /* Cream background */
     border: none;
     padding: 0 10px; /* Adjust padding to align text vertically */
     flex-grow: 1; /* Allows input to take up remaining space */
-    color: #FFFFFF;
+    color: #4a334d; /* Dark purple text */
     outline: none; /* Removes the outline to keep the terminal look */
 }
 
@@ -83,59 +95,93 @@ h1, h2{
     text-align: left; /* Aligns terminal output to the left */
     width: 100%;
 }
+
 a {
-    color: #ffffff; /* Sets hyperlink text to white */
-    text-decoration: none; /* Optional: removes the underline from links */
+    color: #4a334d; /* Dark purple text for hyperlinks */
+    text-decoration: none; /* Removes the underline from links */
 }
 
 a:hover {
-    color: #cccccc; /* Lighter shade of grey on hover */
-    text-decoration: underline; /* Optional: adds an underline on hover */
+    color: #6d5076; /* Lighter shade of purple on hover */
+    text-decoration: underline; /* Adds an underline on hover */
 }
 
-/* Slider Container */
-.image-slider {
-    width: 300px; /* Adjust based on your preference */
-    height: 200px; /* Adjust based on your preference */
-    overflow: hidden;
-    position: relative;
-    margin: 20px auto; /* Center the slider */
-    background-color: #222; /* Slightly lighter than the body for contrast */
-    border: 1px solid #444; /* Subtle border */
+
+/* Blog Post Styling */
+.blog-post {
+    background: #fff;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    text-align: left; /* Aligns blog post content to the left */
+    width: 100%;
+    max-width: 800px;
+    font-family: 'Courier New', Courier, monospace;
 }
 
-/* Slider Images */
-.image-slider img {
+.blog-post h2 {
+    margin-top: 0;
+    font-family: 'Courier New', Courier, monospace;
+    color: #4a334d; /* Dark purple text */
+}
+
+.blog-post p {
+    font-family: 'Courier New', Courier, monospace;
+    color: #4a334d; /* Dark purple text */
+}
+
+/* Blog List Styling */
+.blog-link {
     display: block;
-    max-width: 100%; /* Ensure images are responsive */
-    height: auto; /* Maintain aspect ratio */
+    background: #fff;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    text-align: left; /* Aligns blog link content to the left */
+    width: 100%;
+    max-width: 800px;
+    font-family: 'Courier New', Courier, monospace;
+    color: #4a334d; /* Dark purple text */
+    text-decoration: none; /* Removes underline from links */
 }
 
-/* Slider Navigation Buttons */
-.image-slider .prev, .image-slider .next {
-    cursor: pointer;
-    background-color: rgba(255,255,255,0.1); /* Subtle white for visibility */
-    color: white;
-    border: none;
-    padding: 10px;
-    font-family: 'Courier New', Courier, monospace; /* Consistent with the body */
-    font-size: 16px; /* Match the font size for desktops */
+.blog-link h2 {
+    margin-top: 0;
+    font-family: 'Courier New', Courier, monospace;
+    color: #4a334d; /* Dark purple text */
 }
 
-.image-slider .prev:hover, .image-slider .next:hover {
-    background-color: rgba(255,255,255,0.2); /* Slightly more visible on hover */
+.blog-link p {
+    font-family: 'Courier New', Courier, monospace;
+    color: #4a334d; /* Dark purple text */
 }
 
-.image-slider .prev {
-    position: absolute;
-    top: 50%;
-    left: 10px;
-    transform: translateY(-50%);
+.blog-link:hover {
+    background-color: #f6e7cc; /* Lighter background on hover */
+    box-shadow: 0 0 15px rgba(0,0,0,0.2); /* Slightly more pronounced shadow */
 }
 
-.image-slider .next {
-    position: absolute;
-    top: 50%;
-    right: 10px;
-    transform: translateY(-50%);
+/* Footer Styling */
+footer {
+    background-color: #4a334d; /* Dark purple background */
+    color: #f6e7cc; /* Cream text */
+    text-align: center;
+    padding: 1rem;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Header Navigation Styling */
+header nav a {
+    color: #4a334d; /* Dark purple text for hyperlinks */
+    margin: 0 0.5rem;
+    text-decoration: none; /* Removes the underline from links */
+}
+
+header nav a:hover {
+    color: #6d5076; /* Lighter shade of purple on hover */
+    text-decoration: underline; /* Adds an underline on hover */
 }
