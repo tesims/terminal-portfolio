@@ -1,0 +1,141 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: #f6e7cc; /* Cream background */
+    color: #4a334d; /* Dark purple text */
+    font-family: 'Courier New', Courier, monospace;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+header {
+    max-width: 90%;
+    margin: 20px 0;
+    text-align: center;
+}
+
+header h1, header h2 {
+    margin: 10px auto;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+header nav a {
+    color: #4a334d; /* Dark purple text for hyperlinks */
+    margin: 0 0.5rem;
+    text-decoration: none; /* Removes the underline from links */
+}
+
+header nav a:hover {
+    color: #6d5076; /* Lighter shade of purple on hover */
+    text-decoration: underline; /* Adds an underline on hover */
+}
+
+@media (min-width: 768px) {
+    body, html {
+        font-size: 18px; /* Adjust font size for better readability on tablets */
+    }
+
+    header {
+        max-width: 80%;
+    }
+}
+
+@media (min-width: 1024px) {
+    body, html {
+        font-size: 16px; /* Adjust font size for better readability on desktops */
+    }
+
+    header {
+        max-width: 800px; /* Match the max-width of the terminal for consistency */
+    }
+}
+
+#terminal {
+    width: 100%;
+    max-width: 800px; /* Max width for readability */
+    margin: 20px 0;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+.page {
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.bg-light {
+    background-color: #f6e7cc;
+    color: #4a334d;
+    border: 2px solid #4a334d;
+
+}
+
+.bg-dark {
+    background-color: #4a334d;
+    color: #f6e7cc;
+}
+
+.bg-neutral {
+    background-color: #f6e7cc;
+    color: #4a334d;
+
+}
+
+h2 {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+p, ul {
+    font-family: 'Courier New', Courier, monospace;
+    text-align: left;
+    margin: 0 auto;
+    max-width: 750px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    padding: 5px 0;
+}
+
+.stats-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0 auto;
+    max-width: 750px;
+}
+
+.stat {
+    width: 45%;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 2px solid #f6e7cc;
+    border-radius: 5px;
+    background-color: #4a334d;
+    color: #f6e7cc;
+}
+
+.stat .label {
+    font-weight: bold;
+}
+
+a {
+    color: #4a334d; /* Dark purple text for hyperlinks */
+    text-decoration: none; /* Removes the underline from links */
+}
+
+a:hover {
+    color: #6d5076; /* Lighter shade of purple on hover */
+    text-decoration: underline; /* Adds an underline on hover */
+}
