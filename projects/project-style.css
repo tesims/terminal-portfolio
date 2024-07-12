@@ -1,0 +1,145 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: #f6e7cc; /* Cream background */
+    color: #4a334d; /* Dark purple text */
+    font-family: 'Courier New', Courier, monospace;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+#go-back {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+header {
+    max-width: 90%;
+    margin: 20px 0;
+    text-align: center;
+}
+
+header h1, header h2 {
+    margin: 10px auto;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+header nav a {
+    color: #4a334d; /* Dark purple text for hyperlinks */
+    margin: 0 0.5rem;
+    text-decoration: none; /* Removes the underline from links */
+}
+
+header nav a:hover {
+    color: #6d5076; /* Lighter shade of purple on hover */
+    text-decoration: underline; /* Adds an underline on hover */
+}
+
+.section {
+    margin-top: 40px;
+    max-width: 800px;
+}
+
+.carousel-item {
+    height: 400px;
+}
+
+.carousel-item img {
+    height: 100%;
+    object-fit: cover;
+}
+
+.bg-light {
+    background-color: #f6e7cc;
+    color: #4a334d;
+    border: 2px solid #4a334d;
+}
+
+.bg-dark {
+    background-color: #4a334d;
+    color: #f6e7cc;
+}
+
+.bg-neutral {
+    background-color: #f6e7cc;
+    color: #4a334d;
+}
+
+.stats-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0 auto;
+    max-width: 750px;
+}
+
+.stat {
+    width: 45%;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 2px solid #f6e7cc;
+    border-radius: 5px;
+    background-color: #4a334d;
+    color: #f6e7cc;
+}
+
+.stat .label {
+    font-weight: bold;
+}
+
+a {
+    color: #4a334d; /* Dark purple text for hyperlinks */
+    text-decoration: none; /* Removes the underline from links */
+}
+
+a:hover {
+    color: #6d5076; /* Lighter shade of purple on hover */
+    text-decoration: underline; /* Adds an underline on hover */
+}
+
+.btn-custom {
+    background-color: #4a334d;
+    color: #f6e7cc;
+    border: 2px solid #4a334d;
+}
+
+.btn-custom:hover {
+    background-color: #6d5076;
+    color: #f6e7cc;
+}
+
+.btn-outline-custom {
+    color: #4a334d;
+    border: 2px solid #4a334d;
+}
+
+.btn-outline-custom:hover {
+    background-color: #4a334d;
+    color: #f6e7cc;
+}
+
+/* Custom badge styles */
+.badge-complete {
+    background-color: #4a334d;
+    color: #f6e7cc;
+}
+
+.badge-in-progress {
+    background-color: #6d5076;
+    color: #f6e7cc;
+}
+
+.badge-pending {
+    background-color: #c08c9f;
+    color: #f6e7cc;
+}
+
+.list-group-item {
+    background-color: #f6e7cc;
+    color: #4a334d;
+    border: 1px solid #4a334d;
+}
