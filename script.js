@@ -26,7 +26,7 @@ function handleCommand(command) {
     switch(command.toLowerCase()) {
         case 'about':
             output.innerHTML += `
-            \nWelcome, my name is Anna! When it comes to my day job I love all things data and machine learning, but on the weekends I enjoy exploring the more creative side of technology. I have a solid foundation in machine learning and data engineering from the University of Michigan, I've navigated roles as diverse as Design Engineer, Trading Analyst, and XR Dev and Lab Manager. My research work spans from analyzing carbon emissions in underdeveloped countries to studying the impact of deep learning in computational finance and exoplanet characterization. 
+            \nWelcome, my name is Anna! When it comes to my day job I love all things data and machine learning, but on the weekends I enjoy exploring HCI and the more creative side of technology. I have a solid foundation in machine learning and data engineering from the University of Michigan, I've navigated roles as diverse as Design Engineer, Trading Analyst, and XR Dev and Lab Manager. My research work spans from analyzing carbon emissions in underdeveloped countries to studying the impact of deep learning in computational finance and exoplanet characterization. 
             \nThroughout 2023, I travelled across the country every two weeks to participate in hackathons. These hackathons were not just competitions; they were my classroom, keeping me abreast of cutting-edge tools, technologies, and opportunities in tech.
             \nI've set my sights on upskilling and earning better credentials in 2024, aiming to enhance my credibility and create a solid foundation for turning ambitious plans into successful outcomes. Whether you're a fellow tech enthusiast, potential collaborator, or just passing through, I'm glad you're here. Let's connect and explore how we can make a difference, together.
             `;
@@ -53,10 +53,10 @@ function handleCommand(command) {
                 <p style="margin: 2px 0;"><a href="https://drolg.com">Live Demo</a> | <a href="https://github.com/tesims/drolg" target="_blank">Repository</a></p>
             </div>
             <div style="margin-bottom: 10px;">
-                <h3 style="margin: 5px 0;"><strong>Gralx</strong></h3>
+                <h3 style="margin: 5px 0;"><strong>Graxl</strong></h3>
                 <p style="margin: 2px 0;">Gralx is a context-preserving multimodal data mask API, a privacy layer I'm developing for the ByteDance Innovator Program. It's designed to help researchers and companies working with Large Language Models (LLMs) maintain compliance with privacy standards.</p>
                 <p style="margin: 2px 0;">Technologies & Skills: LLMs, API Integration, Multimedia Processing, Open Source</p>
-                <p style="margin: 2px 0;"><a href="https://gralx.com">Live Demo</a> | <a href="https://github.com/tesims/gralx" target="_blank">Repository</a></p>
+                <p style="margin: 2px 0;"><a href="https://graxl.com">Live Demo</a> | <a href="https://github.com/tesims/gralx" target="_blank">Repository</a></p>
             </div>
             <div style="margin-bottom: 10px;">
                 <h3 style="margin: 5px 0;"><strong>Yoqued</strong></h3>
@@ -179,6 +179,11 @@ function handleCommand(command) {
             output.innerHTML += content;
             break;
 
+        case 'neo meets anna':
+            output.innerHTML += `\nGoing to the Meeting Anna immersive experience ...`;
+            window.open('https://itch.io/', '_blank'); 
+            break;
+
         case 'help':
             output.innerHTML += 
             `\nAvailable commands:
@@ -189,6 +194,7 @@ function handleCommand(command) {
             \n'date me doc'         : Open my date me doc file
             \n'blog'                : See my latest reflections, thoughts, and updates
             \n'fun fact'            : Tidbits about me outside of coding
+            \n'neo meets anna'      : I built a mini video game just for you :)  
             \n'clear'               : Clear the current screen
             \n`;
             break;
@@ -197,7 +203,12 @@ function handleCommand(command) {
             // Refreshes the current page
             window.location.reload();
             break;
-    
+
+        case 'neo meets anna':
+            output.innerHTML += `\nOpening Neo meets Anna...`;
+            window.open('https://www.sycorpia.xyz', '_blank');
+            break;
+
         default:
             output.innerHTML += `\nUnknown command: ${command}. Type 'help' to see available commands.`;
     }

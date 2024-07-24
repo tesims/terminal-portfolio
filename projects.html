@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anna's Projects</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #f6e7cc;
+            color: #4a334d;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        .project-list {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            max-width: 600px;
+        }
+        .project-link {
+            background-color: #fff;
+            border: 2px solid #4a334d;
+            border-radius: 10px;
+            color: #4a334d;
+            font-size: 18px;
+            margin: 10px 0;
+            padding: 15px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+        .project-link:hover {
+            background-color: #4a334d;
+            color: #f6e7cc;
+        }
+        .back-link {
+            margin-top: 20px;
+            color: #4a334d;
+            text-decoration: none;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>My Brainchildren Materialized</h1>
+    <div class="project-list">
+        <a href="https://github.com/tesims/graxl" class="project-link">
+            <span class="project-title">Gralx</span><br>
+            <span class="project-description">Context-Preserving Multimodal Data Mask API</span>
+        </a>
+        <a href="https://github.com/tesims/drolg" class="project-link">
+            <span class="project-title">Drolg</span><br>
+            <span class="project-description">Real-time video processing AI Party DJ</span>
+        </a>
+        <a href="https://github.com/tesims/visual-novel/tree/master" class="project-link">
+            <span class="project-title">Interactive Visual Novels</span>
+        </a>
+        <a href="https://devpost.com/software/datamask" class="project-link" target="_blank">
+            <span class="project-title">Data Mask</span><br>
+            <span class="project-description">Context Preserving Data Mask for LLMs</span>
+        </a>
+        <a href="https://devpost.com/software/navalone" class="project-link" target="_blank">
+            <span class="project-title">Nevalone</span><br>
+            <span class="project-description">Memory Companion for Senior Citizens</span>
+        </a>
+        <a href="https://devpost.com/software/paperping" class="project-link" target="_blank">
+            <span class="project-title">PaperPing</span><br>
+            <span class="project-description">Research Article Monitor</span>
+        </a>
+    </div>
+    <a href="index.html" class="back-link">Back to Home</a>
+</body>
+</html>
